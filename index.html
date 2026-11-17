@@ -20,7 +20,7 @@
 
   <link href="styles.css" rel="stylesheet" />
 
-  <!-- 지역명(CTA 포인트)을 크고 선명한 빨간색으로 강조하는 전용 스타일 -->
+  <!-- 지역명(CTA 포인트) 강조 + 최상단 미니 GIF 전·후 자동 비교 스타일 -->
   <style>
     /* 제목(H1) 안의 지역명 강조 */
     .h1 .region-cta-text {
@@ -38,13 +38,14 @@
 
     /* 상단 태그 및 요약 박스 안의 지역명 강조 */
     .tag .region-cta-text,
-    .aeo-summary .region-cta-text {
+    .aeo-summary .region-cta-text,
+    .mini-gif-title .region-cta-text {
       color: #e11d48;
       font-size: 1.15em;
       font-weight: 900;
     }
 
-    /* 견적 받기 버튼 안의 지역명 강조 (흰색 글씨 배경 대비 선명한 노랑/빨강 포인트) */
+    /* 견적 받기 버튼 안의 지역명 강조 */
     .button .region-cta-text {
       display: inline-block;
       background: #ffffff;
@@ -57,7 +58,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
-    /* 지역이 선택되었을 때 견적 버튼 자체도 강렬한 빨간색 CTA로 전환 */
+    /* 지역 선택 시 견적 버튼 강렬한 빨간색 CTA 전환 */
     .button.region-active-btn {
       background: #e11d48 !important;
       color: #ffffff !important;
@@ -67,6 +68,83 @@
     }
     .button.region-active-btn:hover {
       background: #be123c !important;
+    }
+
+    /* 최상단 아담한 미니 GIF형 Before/After 자동 비교 박스 */
+    .mini-gif-wrap {
+      max-width: 340px;
+      margin: 18px auto 22px;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+    .mini-gif-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .mini-gif-stage {
+      position: relative;
+      width: 100%;
+      height: 205px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0f172a;
+    }
+    .mini-gif-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mini-gif-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .badge-before {
+      background: #dc2626;
+    }
+    .badge-after {
+      background: #1d4ed8;
+    }
+
+    /* 4초 주기로 시공 전(0~50%) -> 시공 후(50~100%) 깜빡이듯 자동 교차 */
+    .gif-layer-after {
+      animation: beforeAfterBlink 3.6s infinite;
+    }
+    @keyframes beforeAfterBlink {
+      0%, 44% {
+        opacity: 0;
+      }
+      50%, 94% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    .mini-gif-caption {
+      margin-top: 7px;
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
     }
   </style>
 
@@ -177,16 +255,33 @@
   </header>
 
   <main>
-    <!-- 1. 고객 공감형 Hero 섹션 + 빨간색 대형 지역 CTA 타이틀 & 버튼 -->
+    <!-- 1. 고객 공감형 Hero 섹션 + 최상단 미니 GIF형 전·후 비교 박스 -->
     <section class="section">
       <div class="container panel center">
         <p class="tag"><span class="dynamic-region-prefix"></span>볼라드 교체·수정 · 주차 안전바 1개 부분보수 전문</p>
         <h1 class="h1"><span class="dynamic-region-prefix"></span>부러지고 흔들리는 볼라드·주차 안전바,<br />1개만 교체·수정해도 새것처럼 튼튼해집니다.</h1>
         <p class="lead">멀쩡한 시설물까지 통째로 갈아엎지 않습니다. 파손된 자리만 정밀 철거 후 바닥 재질에 맞춰 단단하게 재고정합니다.</p>
 
-        <div class="pro-hero">
-          <img alt="마이홈리페어랩 볼라드 교체 및 주차 안전바 시공 대표 사진" src="assets/item_bollard.jpg" />
-        </div>
+        <!-- [신규] 최상단 아담한 GIF형 전·후 자동 비교 위젯 -->
+        <a aria-label="실제 볼라드 교체 전후 사례 블로그 보기" class="mini-gif-wrap" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="display:block; text-decoration:none;" target="_blank">
+          <div class="mini-gif-title">
+            <span>📸</span>
+            <span><span class="dynamic-region-case">구리 수택동</span> 사례 · 전/후 비교</span>
+          </div>
+          <div class="mini-gif-stage">
+            <!-- 바닥 레이어: 시공 전 -->
+            <div>
+              <img alt="볼라드 파손 시공 전 상태" src="assets/bollard_before.jpg" />
+              <span class="mini-gif-badge badge-before">시공 전 · 파손/이탈</span>
+            </div>
+            <!-- 상단 교차 레이어: 시공 후 (자동 깜빡임 전환) -->
+            <div class="gif-layer-after">
+              <img alt="볼라드 교체 및 앙카 고정 시공 후 상태" src="assets/bollard_after.jpg" />
+              <span class="mini-gif-badge badge-after">시공 후 · 교체/고정 완료</span>
+            </div>
+          </div>
+          <div class="mini-gif-caption">자동 전·후 비교 중 · 터치하면 상세 작업 일지 보기 →</div>
+        </a>
 
         <!-- AEO(AI 검색 답변 추출 최적화) 핵심 요약 박스 -->
         <div class="aeo-summary" style="background:#f8f9fa; border-left:4px solid #1a73e8; padding:16px 20px; margin:20px auto; max-width:760px; text-align:left; border-radius:6px;">
@@ -263,7 +358,7 @@
 
         <div class="showcase-grid photo-spotlight">
           <article class="showcase case-card" data-photo-item="볼라드">
-            <h3>[현장 사례] 파손된 기존 볼라드 철거 및 신품 교체·앙카 정밀 고정</h3>
+            <h3>[<span class="dynamic-region-case">구리 수택동</span> 현장 사례] 파손된 기존 볼라드 철거 및 신품 교체·앙카 정밀 고정</h3>
             <p>차량 충격으로 파손·이탈된 기존 볼라드와 잔여 앙카를 안전하게 제거한 뒤, 수평과 간격을 수정하여 흔들림 없이 견고하게 교체 시공했습니다.</p>
             <div class="photo-pair">
               <figure>
@@ -387,7 +482,7 @@
       </div>
     </section>
 
-    <!-- 7. 광역 지역별 출장 SEO 디렉토리 (클릭 시 상단 제목과 버튼이 크고 빨간 CTA로 즉시 전환) -->
+    <!-- 7. 광역 지역별 출장 SEO 디렉토리 (클릭 시 상단 제목과 사례 지역명이 즉시 전환) -->
     <section class="section service-region-section" id="region-directory">
       <div class="container panel">
         <div class="section-head center">
@@ -398,12 +493,12 @@
 
         <nav aria-label="주요 출장 거점 안내" class="region-nav" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:16px 0 24px;">
           <a class="region-chip" data-region="구리 수택동" href="?region=구리%20수택동">구리 수택동·전지역</a>
-          <a class="region-chip" data-region="구리 인창동·갈매동" href="?region=구리%20인창동">구리 인창동·갈매동</a>
+          <a class="region-chip" data-region="구리 인창동" href="?region=구리%20인창동">구리 인창동·갈매동</a>
           <a class="region-chip" data-region="광명 하안동" href="?region=광명%20하안동">광명 하안동·전지역</a>
-          <a class="region-chip" data-region="광명 철산동·소하동" href="?region=광명%20철산동">광명 철산동·소하동</a>
-          <a class="region-chip" data-region="남양주 다산동·별내동" href="?region=남양주%20다산동">남양주 다산·별내</a>
-          <a class="region-chip" data-region="서울 노원구·송파구·강서구" href="?region=서울">서울특별시 전지역</a>
-          <a class="region-chip" data-region="인천 서구 청라·송도" href="?region=인천%20서구">인천광역시 전지역</a>
+          <a class="region-chip" data-region="광명 철산동" href="?region=광명%20철산동">광명 철산동·소하동</a>
+          <a class="region-chip" data-region="남양주 다산동" href="?region=남양주%20다산동">남양주 다산·별내</a>
+          <a class="region-chip" data-region="서울" href="?region=서울">서울특별시 전지역</a>
+          <a class="region-chip" data-region="인천 서구" href="?region=인천%20서구">인천광역시 전지역</a>
           <a class="region-chip" data-region="충북 충주시" href="?region=충주">충청북도 충주시 전지역</a>
         </nav>
 
@@ -424,4 +519,102 @@
           <details class="faq" style="margin-bottom:10px;">
             <summary><strong>[서울특별시 전지역]</strong> 25개 자치구 주요 동별 출장 안내</summary>
             <div style="font-size:0.9rem; line-height:1.75; color:#444; padding-top:8px;">
-              <p style="margin:0 0 8px;"><strong>· 동북권:</strong> 노원구(중계동, 상계동, 하계동, 공릉동, 월계동), 도봉구(창동, 쌍문동, 방학동, 도봉동), 강북구(미아동, 번동, 수유동, 우이동), 성북구(길음동, 돈암동, 정릉동, 장위동, 석관동, 보문동), 중랑구(면목동, 상봉동, 중화동, 묵동, 망우동, 신내동), 동대문구(장안동, 전농동, 답십리동, 이문동, 휘경동, 제기동, 용두동), 광진구(구의동, 자
+              <p style="margin:0 0 8px;"><strong>· 동북권:</strong> 노원구(중계동, 상계동, 하계동, 공릉동, 월계동), 도봉구(창동, 쌍문동, 방학동, 도봉동), 강북구(미아동, 번동, 수유동, 우이동), 성북구(길음동, 돈암동, 정릉동, 장위동, 석관동, 보문동), 중랑구(면목동, 상봉동, 중화동, 묵동, 망우동, 신내동), 동대문구(장안동, 전농동, 답십리동, 이문동, 휘경동, 제기동, 용두동), 광진구(구의동, 자양동, 광장동, 화양동, 군자동, 중곡동), 성동구(왕십리동, 행당동, 금호동, 옥수동, 성수동, 응봉동)</p>
+              <p style="margin:0 0 8px;"><strong>· 동남권:</strong> 송파구(잠실동, 문정동, 가락동, 거여동, 마천동, 방이동, 오금동, 송파동, 삼전동, 석촌동, 풍납동, 장지동), 강동구(천호동, 길동, 둔촌동, 명일동, 고덕동, 상일동, 암사동, 성내동, 강일동), 강남구(대치동, 도곡동, 개포동, 역삼동, 삼성동, 청담동, 압구정동, 논현동, 수서동, 일원동, 세곡동), 서초구(반포동, 잠원동, 서초동, 방배동, 양재동, 내곡동, 우면동)</p>
+              <p style="margin:0 0 8px;"><strong>· 서남권:</strong> 강서구(등촌동, 화곡동, 마곡동, 방화동, 공항동, 염창동, 가양동, 내발산동), 양천구(목동, 신정동, 신월동), 구로구(구로동, 신도림동, 개봉동, 고척동, 오류동, 궁동, 항동), 영등포구(여의도동, 당산동, 문래동, 영등포동, 신길동, 대림동, 양평동), 동작구(상도동, 흑석동, 노량진동, 사당동, 대방동, 신대방동), 관악구(봉천동, 신림동, 남현동), 금천구(가산동, 독산동, 시흥동)</p>
+              <p style="margin:0;"><strong>· 서북·도심권:</strong> 마포구(염리동, 아현동, 공덕동, 대흥동, 도화동, 서교동, 합정동, 망원동, 성산동, 상암동), 서대문구(북아현동, 홍제동, 홍은동, 연희동, 남가좌동, 북가좌동), 은평구(진관동, 불광동, 갈현동, 대조동, 역촌동, 응암동, 녹번동, 수색동, 증산동), 용산구(이촌동, 한남동, 효창동, 문배동, 한강로동), 종로구·중구 전지역</p>
+            </div>
+          </details>
+
+          <details class="faq" style="margin-bottom:10px;">
+            <summary><strong>[인천광역시 전지역]</strong> 서구·연수구·남동구·부평구·계양구·미추홀구·중구·동구 출장 안내</summary>
+            <div style="font-size:0.9rem; line-height:1.75; color:#444; padding-top:8px;">
+              <p style="margin:0;"><strong>· 인천 전지역:</strong> 서구(청라동, 검암동, 경서동, 당하동, 원당동, 불로동, 마전동, 왕길동, 가정동, 신현동, 석남동, 가좌동), 연수구(송도동, 동춘동, 연수동, 옥련동, 선학동, 청학동), 남동구(구월동, 논현동, 만수동, 간석동, 서창동, 도림동), 부평구(삼산동, 부평동, 산곡동, 청천동, 부개동, 갈산동, 십정동), 계양구(계산동, 작전동, 효성동, 임학동, 귤현동, 동양동), 미추홀구(용현동, 학익동, 주안동, 도화동, 숭의동, 관교동), 중구(영종도 운서동, 중산동, 운남동, 신흥동), 동구 송림동·화수동 전지역</p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary><strong>[충청북도 충주시 전지역]</strong> 충주시 동·읍·면 출장 안내</summary>
+            <div style="font-size:0.9rem; line-height:1.75; color:#444; padding-top:8px;">
+              <p style="margin:0;"><strong>· 충주시 전지역:</strong> 충주시 연수동, 칠금동, 금릉동, 호암동, 직동, 문화동, 성서동, 용산동, 지현동, 봉방동, 교현동, 안림동, 목행동, 달천동, 대소원면(서충주신도시 첨단산업단지·기업도시), 주덕읍, 신니면, 노은면, 앙성면, 중앙탑면, 금가면, 동량면, 산척면, 엄정면, 소태면, 살미면, 수안보면 전지역 출장 시공</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 푸터 -->
+  <footer class="footer">
+    <div class="container center" style="padding:24px 16px; color:#666; font-size:0.9rem;">
+      <p><strong>마이홈리페어랩</strong> | 대표 상담: <a href="tel:010-7724-5425">010-7724-5425</a> | <a href="https://blog.naver.com/realcharming-" rel="noopener noreferrer" target="_blank">공식 네이버 블로그</a></p>
+      <p>서울 · 경기도 전지역 · 인천 · 충주 출장 | 볼라드 교체·수정·설치 · 주차 안전바 교체 부분보수 전문</p>
+    </div>
+  </footer>
+
+  <!-- 지역명 자동 변환(Dynamic Region & Red CTA Point) 스크립트 -->
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      let rawInput = params.get('region') || params.get('q') || '';
+
+      function extractRegion(text) {
+        if (!text) return '';
+        let cleaned = text
+          .replace(/볼라드|블러드|주차\s*안전바|주차금지봉|차선규제봉|교체|수정|설치|보수|부분보수|수리|업체|시공|견적/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+        return cleaned;
+      }
+
+      function applyRegion(regionName) {
+        if (!regionName) return;
+        const cleanRegion = regionName.trim();
+
+        // 상단 태그, H1 제목, 견적 버튼 안의 지역명을 크고 빨간 CTA 스타일(.region-cta-text)로 삽입
+        document.querySelectorAll('.dynamic-region-prefix').forEach(function(el) {
+          el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span> ';
+        });
+
+        // 최상단 미니 GIF 박스 위 '구리 수택동 사례' 지역명도 빨간색 강조 텍스트로 변환
+        document.querySelectorAll('.dynamic-region-case').forEach(function(el) {
+          el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span>';
+        });
+
+        // 견적 받기 버튼을 강렬한 빨간색 CTA 버튼으로 전환
+        document.querySelectorAll('.cta-main-btn').forEach(function(btn) {
+          btn.classList.add('region-active-btn');
+        });
+
+        // 핵심 요약 박스 내 지역 강조 텍스트 업데이트
+        document.querySelectorAll('.dynamic-region-highlight').forEach(function(el) {
+          el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span> 및 수도권·충주 전지역';
+        });
+
+        // 브라우저 탭 제목(<title>) 업데이트
+        document.title = cleanRegion + ' 볼라드 교체·수정 · 주차 안전바 1개 부분보수 | 마이홈리페어랩';
+      }
+
+      const initialRegion = extractRegion(rawInput);
+      if (initialRegion) {
+        applyRegion(initialRegion);
+      }
+
+      // 하단 지역 버튼(.region-chip) 클릭 시 해당 지역명으로 즉시 전환 및 상단 이동
+      document.querySelectorAll('.region-chip').forEach(function(chip) {
+        chip.addEventListener('click', function(e) {
+          const selectedRegion = this.getAttribute('data-region');
+          if (selectedRegion) {
+            e.preventDefault();
+            applyRegion(selectedRegion);
+            const newUrl = window.location.pathname + '?region=' + encodeURIComponent(selectedRegion);
+            window.history.pushState({ region: selectedRegion }, '', newUrl);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

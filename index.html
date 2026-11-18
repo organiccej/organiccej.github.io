@@ -4,24 +4,53 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- 1. 기본 SEO 메타 태그 -->
-  <title>마이홈리페어랩 | 파손 볼라드 교체·수정 · 주차 안전바 1개 부분보수 전문</title>
-  <meta name="description" content="서울·경기도 전지역·인천·충주 출장! 차량 충돌로 부러진 볼라드 교체·위치 수정, 주차 안전바 교체, 셀프 시공 실패 복구부터 스텐·우레탄·매립이동식·앙카식 1개 소량 시공 및 주말·야간 상담 010-7724-5425." />
+  <!-- 1. 기본 SEO 메타 태그 (클릭률 극대화 후킹 타이틀) -->
+  <title>마이홈리페어랩 | 파손 볼라드 1개 부분교체·수정 · 주차 안전바 당일 보수 전문</title>
+  <meta name="description" content="전체 철거 없이 부러진 볼라드·주차 안전바 1개만 정밀 교체! 구리·광명·서울·경기·인천·충주 출장, 주말·야간 시공 가능. 사진 2장이면 출장비 포함 확정 견적 010-7724-5425." />
   <meta name="keywords" content="마이홈리페어랩, 볼라드 교체, 볼라드 수정, 볼라드 설치, 볼라드 부분보수, 주차 안전바 교체, 주차 안전바 설치, 주차금지봉 교체, 차선규제봉 수리, 매립이동식 볼라드, 앙카식 볼라드, 우레탄 볼라드, 스텐 볼라드, 구리 수택동 볼라드, 광명 하안동 주차 안전바, 서울 경기 인천 충주 볼라드" />
-  <link rel="canonical" href="https://organiccej.github.io/index.html" />
+  <link rel="canonical" href="https://organiccej.github.io/" />
 
-  <!-- 오픈그래프 -->
+  <!-- 2. 네이버 & 구글 검색 대표 썸네일(미리보기 사진) 강제 노출 세팅 -->
+  <meta name="image" content="https://organiccej.github.io/assets/bollard_after.jpg" />
+  <meta property="og:site_name" content="마이홈리페어랩" />
+  <meta property="og:locale" content="ko_KR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="마이홈리페어랩 | 파손 볼라드 교체·수정 및 주차 안전바 교체 전문" />
-  <meta property="og:description" content="전체 철거 없이 부러지고 흔들리는 볼라드·주차 안전바 1개만 정밀 교체·재고정합니다. 사진 2장이면 출장비 포함 투명 견적 안내." />
-  <meta property="og:url" content="https://organiccej.github.io/index.html" />
-  <meta property="og:image" content="https://organiccej.github.io/assets/item_bollard.jpg" />
+  <meta property="og:title" content="부러진 볼라드·주차 안전바 1개만 교체! 출장비 포함 사진 견적 | 마이홈리페어랩" />
+  <meta property="og:description" content="멀쩡한 바닥까지 다 뜯지 마세요. 파손된 자리만 정밀 철거 후 단단하게 재고정합니다. (서울·경기·인천·충주 주말·야간 출장)" />
+  <meta property="og:url" content="https://organiccej.github.io/" />
+  <meta property="og:image" content="https://organiccej.github.io/assets/bollard_after.jpg" />
+  <meta property="og:image:secure_url" content="https://organiccej.github.io/assets/bollard_after.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="마이홈리페어랩 파손 볼라드 및 주차 안전바 신품 교체 완료 시공 후 사진" />
+
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="부러진 볼라드·주차 안전바 1개만 교체! | 마이홈리페어랩" />
+  <meta name="twitter:description" content="사진 2장이면 출장비 포함 확정 견적 안내. 구리·광명·서울·경기·인천·충주 출장 시공." />
+  <meta name="twitter:image" content="https://organiccej.github.io/assets/bollard_after.jpg" />
 
   <link href="styles.css" rel="stylesheet" />
 
-  <!-- 지역명(CTA 포인트) 강조 + 최상단 미니 GIF 전·후 자동 비교 스타일 -->
+  <!-- 지역명(CTA 포인트) 강조 + 후킹 배지 + 최상단 미니 GIF 전·후 자동 비교 스타일 -->
   <style>
+    /* 최상단 신뢰 & 후킹 배지 */
+    .trust-hook-bar {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
     /* 제목(H1) 안의 지역명 강조 */
     .h1 .region-cta-text {
       display: inline-block;
@@ -58,42 +87,56 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
-    /* 지역 선택 시 견적 버튼 강렬한 빨간색 CTA 전환 */
+    /* 기본 CTA 버튼도 처음부터 시선을 끌도록 강조 */
+    .cta-main-btn {
+      background: #e11d48 !important;
+      color: #ffffff !important;
+      font-weight: 800;
+      box-shadow: 0 6px 18px rgba(225, 29, 72, 0.28);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .cta-main-btn:hover {
+      background: #be123c !important;
+      transform: translateY(-1px);
+    }
+
+    /* 지역 선택 시 견적 버튼 더욱 강렬한 CTA 전환 */
     .button.region-active-btn {
       background: #e11d48 !important;
       color: #ffffff !important;
       font-size: 1.08rem;
       padding: 15px 24px;
-      box-shadow: 0 6px 18px rgba(225, 29, 72, 0.35);
-    }
-    .button.region-active-btn:hover {
-      background: #be123c !important;
+      box-shadow: 0 8px 22px rgba(225, 29, 72, 0.38);
     }
 
-    /* 최상단 아담한 미니 GIF형 Before/After 자동 비교 박스 */
+    /* 최상단 아담한 미니 GIF형 Before/After 자동 비교 박스 (후킹 테두리 강화) */
     .mini-gif-wrap {
-      max-width: 340px;
+      max-width: 360px;
       margin: 18px auto 22px;
       background: #ffffff;
-      border: 2px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 10px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 2.5px solid #1d4ed8;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 10px 25px rgba(29, 78, 216, 0.14);
+      transition: transform 0.2s ease;
+    }
+    .mini-gif-wrap:hover {
+      transform: translateY(-2px);
     }
     .mini-gif-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: #1e293b;
+      font-size: 0.94rem;
+      font-weight: 900;
+      color: #0f172a;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
     }
     .mini-gif-stage {
       position: relative;
       width: 100%;
-      height: 205px;
+      height: 220px;
       border-radius: 10px;
       overflow: hidden;
       background: #0f172a;
@@ -110,13 +153,13 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 800;
+      font-size: 0.78rem;
+      font-weight: 900;
       color: #ffffff;
       letter-spacing: -0.01em;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
     }
     .badge-before {
       background: #dc2626;
@@ -125,30 +168,48 @@
       background: #1d4ed8;
     }
 
-    /* 4초 주기로 시공 전(0~50%) -> 시공 후(50~100%) 깜빡이듯 자동 교차 */
+    /* 3.6초 주기로 시공 전 -> 시공 후 자동 교차 */
     .gif-layer-after {
       animation: beforeAfterBlink 3.6s infinite;
     }
     @keyframes beforeAfterBlink {
-      0%, 44% {
-        opacity: 0;
-      }
-      50%, 94% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+      0%, 44% { opacity: 0; }
+      50%, 94% { opacity: 1; }
+      100% { opacity: 0; }
     }
     .mini-gif-caption {
-      margin-top: 7px;
-      font-size: 0.78rem;
-      color: #64748b;
-      font-weight: 600;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #1d4ed8;
+      font-weight: 800;
+    }
+
+    /* 숏폼(유튜브 숏츠) 현장 영상 섹션 스타일 */
+    .shorts-box {
+      max-width: 340px;
+      margin: 18px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      background: #000;
+    }
+    .shorts-ratio {
+      position: relative;
+      padding-bottom: 177.78%;
+      height: 0;
+    }
+    .shorts-ratio iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   </style>
 
-  <!-- 2. SEO & AEO 구조화 데이터 -->
+  <!-- 3. SEO & AEO 구조화 데이터 (검색 결과 썸네일 + 대표 이미지 연결) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -159,6 +220,10 @@
         "name": "마이홈리페어랩",
         "url": "https://organiccej.github.io/",
         "telephone": "010-7724-5425",
+        "image": [
+          "https://organiccej.github.io/assets/bollard_after.jpg",
+          "https://organiccej.github.io/assets/bollard_before.jpg"
+        ],
         "sameAs": [
           "https://blog.naver.com/realcharming-",
           "https://blog.naver.com/realcharming-/224472129618"
@@ -180,11 +245,17 @@
         ]
       },
       {
-        "@type": "WebSite",
-        "@id": "https://organiccej.github.io/#website",
+        "@type": "WebPage",
+        "@id": "https://organiccej.github.io/#webpage",
         "url": "https://organiccej.github.io/",
-        "name": "마이홈리페어랩",
-        "inLanguage": "ko-KR"
+        "name": "마이홈리페어랩 | 파손 볼라드 1개 부분교체·수정 · 주차 안전바 보수 전문",
+        "inLanguage": "ko-KR",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://organiccej.github.io/assets/bollard_after.jpg",
+          "width": 1200,
+          "height": 630
+        }
       },
       {
         "@type": "FAQPage",
@@ -255,28 +326,31 @@
   </header>
 
   <main>
-    <!-- 1. 고객 공감형 Hero 섹션 + 최상단 미니 GIF형 전·후 비교 박스 -->
+    <!-- 1. 고객 공감형 Hero 섹션 + 후킹 배지 + 최상단 미니 GIF형 전·후 비교 박스 -->
     <section class="section">
       <div class="container panel center">
+        <div class="trust-hook-bar">
+          <span>🔥 전체 철거 NO! 파손된 자리 1개만 정밀 교체 · 주말/야간 출장</span>
+        </div>
         <p class="tag"><span class="dynamic-region-prefix"></span>볼라드 교체·수정 · 주차 안전바 1개 부분보수 전문</p>
         <h1 class="h1"><span class="dynamic-region-prefix"></span>부러지고 흔들리는 볼라드·주차 안전바,<br />1개만 교체·수정해도 새것처럼 튼튼해집니다.</h1>
         <p class="lead">멀쩡한 시설물까지 통째로 갈아엎지 않습니다. 파손된 자리만 정밀 철거 후 바닥 재질에 맞춰 단단하게 재고정합니다.</p>
 
-        <!-- [신규] 최상단 아담한 GIF형 전·후 자동 비교 위젯 -->
+        <!-- 최상단 후킹 미니 GIF형 전·후 자동 비교 위젯 (네이버 대표 썸네일 연동) -->
         <a aria-label="실제 볼라드 교체 전후 사례 블로그 보기" class="mini-gif-wrap" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="display:block; text-decoration:none;" target="_blank">
           <div class="mini-gif-title">
-            <span>📸</span>
-            <span><span class="dynamic-region-case">구리 수택동</span> 사례 · 전/후 비교</span>
+            <span>⚡</span>
+            <span><span class="dynamic-region-case">구리 수택동</span> 실제 시공 · 전/후 비교</span>
           </div>
           <div class="mini-gif-stage">
             <!-- 바닥 레이어: 시공 전 -->
             <div>
-              <img alt="볼라드 파손 시공 전 상태" src="assets/bollard_before.jpg" />
+              <img alt="구리 수택동 주차장 파손 볼라드 시공 전 상태" src="assets/bollard_before.jpg" />
               <span class="mini-gif-badge badge-before">시공 전 · 파손/이탈</span>
             </div>
-            <!-- 상단 교차 레이어: 시공 후 (자동 깜빡임 전환) -->
+            <!-- 상단 교차 레이어: 시공 후 (자동 전환) -->
             <div class="gif-layer-after">
-              <img alt="볼라드 교체 및 앙카 고정 시공 후 상태" src="assets/bollard_after.jpg" />
+              <img alt="구리 수택동 주차장 파손 볼라드 신품 교체 및 앙카 고정 완료 후 대표 사진" src="assets/bollard_after.jpg" />
               <span class="mini-gif-badge badge-after">시공 후 · 교체/고정 완료</span>
             </div>
           </div>
@@ -292,7 +366,7 @@
         </div>
 
         <div class="buttons">
-          <a class="button cta-main-btn" href="tel:010-7724-5425">📞 <span class="dynamic-region-prefix"></span>사진 보내고 바로 견적 받기</a>
+          <a class="button cta-main-btn" href="tel:010-7724-5425">📞 <span class="dynamic-region-prefix"></span>사진 2장 보내고 바로 견적 받기</a>
           <a aria-label="마이홈리페어랩 실제 볼라드 시공 사례 블로그 보기 (새 창)" class="button alt" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" target="_blank">실제 시공 사례 자세히 보기 →</a>
         </div>
       </div>
@@ -347,7 +421,7 @@
       </div>
     </section>
 
-    <!-- 3. 실제 작업 전·후(Before & After) & 네이버 블로그 사례 직결 -->
+    <!-- 3. 실제 작업 전·후(Before & After) & 유튜브 숏츠 현장 영상 & 네이버 블로그 사례 직결 -->
     <section class="section service-before-after" id="photos">
       <div class="container">
         <div class="section-head center">
@@ -370,6 +444,20 @@
                 <figcaption>시공 후 (정밀 교체·고정 완료)</figcaption>
               </figure>
             </div>
+
+            <!-- [체류시간 급상승 장치] 유튜브 숏츠 현장 시공 영상 슬롯 (영상 ID 넣으면 바로 재생) -->
+            <!-- 사용법: 유튜브 숏츠 올리신 뒤 아래 주석(<!-- 와 -->)을 지우고 '유튜브_숏츠_영상ID'만 바꾸세요! -->
+            <!--
+            <div style="margin-top:22px; text-align:center;">
+              <strong style="font-size:0.95rem; color:#0f172a;">🎥 20초 요약 · 실제 현장 앙카 고정 시공 영상</strong>
+              <div class="shorts-box">
+                <div class="shorts-ratio">
+                  <iframe src="https://www.youtube.com/embed/유튜브_숏츠_영상ID" title="볼라드 교체 시공 숏츠" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            -->
+
             <div style="margin-top:16px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; background:#f8fafc; padding:12px 16px; border-radius:10px;">
               <span style="font-size:0.9rem; color:#334155;">📸 작업 과정과 상세 후기가 궁금하시다면 블로그에서 확인하세요.</span>
               <a class="button" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="padding:9px 16px; font-size:0.9rem;" target="_blank">이 현장 블로그 후기 읽기 →</a>
@@ -571,27 +659,22 @@
         if (!regionName) return;
         const cleanRegion = regionName.trim();
 
-        // 상단 태그, H1 제목, 견적 버튼 안의 지역명을 크고 빨간 CTA 스타일(.region-cta-text)로 삽입
         document.querySelectorAll('.dynamic-region-prefix').forEach(function(el) {
           el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span> ';
         });
 
-        // 최상단 미니 GIF 박스 위 '구리 수택동 사례' 지역명도 빨간색 강조 텍스트로 변환
         document.querySelectorAll('.dynamic-region-case').forEach(function(el) {
           el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span>';
         });
 
-        // 견적 받기 버튼을 강렬한 빨간색 CTA 버튼으로 전환
         document.querySelectorAll('.cta-main-btn').forEach(function(btn) {
           btn.classList.add('region-active-btn');
         });
 
-        // 핵심 요약 박스 내 지역 강조 텍스트 업데이트
         document.querySelectorAll('.dynamic-region-highlight').forEach(function(el) {
           el.innerHTML = '<span class="region-cta-text">' + cleanRegion + '</span> 및 수도권·충주 전지역';
         });
 
-        // 브라우저 탭 제목(<title>) 업데이트
         document.title = cleanRegion + ' 볼라드 교체·수정 · 주차 안전바 1개 부분보수 | 마이홈리페어랩';
       }
 
@@ -600,7 +683,6 @@
         applyRegion(initialRegion);
       }
 
-      // 하단 지역 버튼(.region-chip) 클릭 시 해당 지역명으로 즉시 전환 및 상단 이동
       document.querySelectorAll('.region-chip').forEach(function(chip) {
         chip.addEventListener('click', function(e) {
           const selectedRegion = this.getAttribute('data-region');

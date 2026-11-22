@@ -547,7 +547,7 @@
 </head>
 <body>
 
-  <!-- 상단 고정 헤더 -->
+  <!-- 상단 고정 헤더 (시공 사례 먼저 -> 견적 바로가기 순서) -->
   <header class="header">
     <div class="container header-inner">
       <div class="identity">
@@ -555,10 +555,10 @@
         <a aria-label="전화 상담 010-7724-5425" class="phone" href="tel:010-7724-5425">📞 010-7724-5425</a>
       </div>
       <nav aria-label="주요 메뉴" class="nav">
-        <a href="#quick-quote">견적 바로가기</a>
-        <a href="#situations">상황별 해결책</a>
         <a href="#photos">실제 시공 사례</a>
+        <a href="#situations">상황별 해결책</a>
         <a href="#compare">비용·방식 비교</a>
+        <a href="#quick-quote">견적 바로가기</a>
         <a href="#region-directory">출장 지역</a>
       </nav>
     </div>
@@ -610,134 +610,7 @@
       </div>
     </section>
 
-    <!-- 1-2. 견적 바로가기 (4개 항목 입력 + 바로 확인용 요약/복사/문자 발송) -->
-    <section class="section" id="quick-quote">
-      <div class="container panel center">
-        <p class="tag">견적 바로가기</p>
-        <h2 class="h2"><span class="dynamic-region-prefix"></span>볼라드 · 주차 안전바 견적 물어보기</h2>
-        <p class="section-lead">아래 4가지를 적거나 선택하시면 오른쪽(모바일은 아래)에서 <strong>견적 내용을 바로 확인하고 복사·문자 발송</strong>하실 수 있습니다.</p>
-
-        <div class="quote-grid">
-          <div class="quote-box">
-            <div class="quote-item">
-              <label class="quote-label" for="q1Input">1. 교체 vs 수리</label>
-              <span class="quote-help">신품 교체인지, 흔들림·위치 재고정 등 수리인지 선택하거나 적어주세요.</span>
-              <div class="quote-chips" data-qtarget="q1Input">
-                <button type="button" class="quote-chip-btn is-selected" data-qval="교체">교체</button>
-                <button type="button" class="quote-chip-btn" data-qval="수리">수리</button>
-                <button type="button" class="quote-chip-btn" data-qval="교체 및 수리 상담">교체·수리 상담</button>
-              </div>
-              <input id="q1Input" class="quote-input" type="text" value="교체" placeholder="예: 교체 / 수리 / 1개 부분 교체" />
-            </div>
-
-            <div class="quote-item">
-              <label class="quote-label" for="q2Input">2. 제품 실측 사이즈만 부탁드립니다.</label>
-              <span class="quote-help">높이, 지름(또는 가로·세로 폭), 베이스 크기 등 실측 치수를 적어주세요.</span>
-              <input id="q2Input" class="quote-input" type="text" placeholder="예: 높이 750mm, 지름 114mm (모르실 경우 '미확인')" />
-            </div>
-
-            <div class="quote-item">
-              <label class="quote-label" for="q3Input">3. 지역이 어디신가요</label>
-              <span class="quote-help">시/구/동 및 현장 위치(상가·아파트·주차장 등)를 적어주세요.</span>
-              <input id="q3Input" class="quote-input" type="text" placeholder="예: 구리시 수택동 / 광명시 하안동" />
-            </div>
-
-            <div class="quote-item">
-              <label class="quote-label" for="q4Input">4. 볼라드인가요, 기타 제품인가요(모르면 사진 첨부 부탁드립니다.)</label>
-              <span class="quote-help">볼라드·주차 안전바·기타 제품 여부를 고르거나 적어주세요. (모르면 사진 첨부)</span>
-              <div class="quote-chips" data-qtarget="q4Input">
-                <button type="button" class="quote-chip-btn is-selected" data-qval="볼라드">볼라드</button>
-                <button type="button" class="quote-chip-btn" data-qval="주차 안전바">주차 안전바</button>
-                <button type="button" class="quote-chip-btn" data-qval="기타 제품(모름·사진 첨부 부탁드립니다.)">기타 제품 / 모름(사진 첨부)</button>
-              </div>
-              <input id="q4Input" class="quote-input" type="text" value="볼라드" placeholder="예: 볼라드 / 주차 안전바 / 기타 제품(모름·사진 첨부)" />
-            </div>
-          </div>
-
-          <div class="quote-box">
-            <strong style="display:block; font-size:0.98rem; color:#0f172a; margin-bottom:10px;">✔ 바로 확인하는 견적 요약</strong>
-
-            <div class="quote-preview-card">
-              <div class="quote-preview-line">
-                <span class="quote-preview-k">1. 교체 vs 수리</span>
-                <span class="quote-preview-v" id="prevQ1">교체</span>
-              </div>
-              <div class="quote-preview-line">
-                <span class="quote-preview-k">2. 제품 실측 사이즈</span>
-                <span class="quote-preview-v" id="prevQ2">미입력</span>
-              </div>
-              <div class="quote-preview-line">
-                <span class="quote-preview-k">3. 지역</span>
-                <span class="quote-preview-v" id="prevQ3">미입력</span>
-              </div>
-              <div class="quote-preview-line">
-                <span class="quote-preview-k">4. 볼라드 / 기타 제품</span>
-                <span class="quote-preview-v" id="prevQ4">볼라드</span>
-              </div>
-            </div>
-
-            <textarea id="quoteSummaryText" class="quote-textarea" readonly></textarea>
-
-            <div class="quote-actions">
-              <button type="button" class="button" id="copyQuoteSummaryBtn">📋 견적 내용 복사하기</button>
-              <a class="button cta-main-btn" id="smsQuoteSummaryBtn" href="sms:010-7724-5425">📩 문자로 견적 보내기 (010-7724-5425)</a>
-            </div>
-            <div class="quote-copy-status" id="quoteCopyStatus"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. 고객 상황별 빠른 자가진단 카드 -->
-    <section class="section" id="situations">
-      <div class="container panel">
-        <div class="center">
-          <p class="tag">내 현장은 어떤 상황인가요?</p>
-          <h2 class="h2">가장 많이 문의하시는 4가지 현장 고민</h2>
-          <p class="section-lead">해당하는 상황을 눌러보시면 실제 현장에서 어떻게 해결했는지 바로 확인하실 수 있습니다.</p>
-        </div>
-
-        <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); text-align:left; margin-top:22px;">
-          <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <strong>상황 01 · 파손·이탈</strong>
-              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"차가 들이받아 볼라드·안전바 1개만 부러졌어요"</h3>
-              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">기존 파손 기둥과 박혀있는 앙카 볼트를 깔끔히 제거한 뒤, 주변 간격과 높이를 맞춰 1개만 부분 교체합니다.</p>
-            </div>
-            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">부분 교체 사례 보기 →</a>
-          </div>
-
-          <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <strong>상황 02 · 흔들림·위치 수정</strong>
-              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"기둥은 멀쩡한데 바닥에서 흔들리거나 위치를 옮기고 싶어요"</h3>
-              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">아스콘·보도블록 등 약한 바닥에 박혀 헐거워진 앙카를 보강 재고정하거나 차량 동선에 맞춰 설치 위치를 수정합니다.</p>
-            </div>
-            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">재고정·수정 사례 보기 →</a>
-          </div>
-
-          <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <strong>상황 03 · 출입 통제·이동식</strong>
-              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"평소엔 막아두고 필요할 때만 빼서 차를 대고 싶어요"</h3>
-              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">바닥 천공 후 매립관을 묻는 매립이동식 또는 자물쇠 잠금·체인 고리 용접 볼라드로 무단 주차를 완벽히 차단합니다.</p>
-            </div>
-            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">이동식·체인 시공 보기 →</a>
-          </div>
-
-          <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <strong>상황 04 · 야간·주말 작업</strong>
-              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"평일 낮엔 차가 계속 드나들어 작업할 시간이 없어요"</h3>
-              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">상가·빌라·물류센터 출입구 등 낮 시간 통제가 어려운 현장은 주말 및 야간 예약 출장으로 안전하게 시공합니다.</p>
-            </div>
-            <a href="tel:010-7724-5425" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;">주말·야간 일정 문의 →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. 실제 작업 전·후 컴팩트 10개 쇼케이스 (모바일 2열 작게 표시 · 볼라드 종류 + 도/시 표시) -->
+    <!-- 2. 실제 작업 전·후 컴팩트 10개 쇼케이스 (가장 먼저 신뢰를 확보하는 배치) -->
     <section class="section service-before-after" id="photos">
       <div class="container">
         <div class="section-head center">
@@ -777,7 +650,7 @@
             </div>
           </article>
 
-          <!-- 사례 02: 서울 송파구 (사진 업로드 후 src를 assets/songpa_munjeong_before.jpg / after.jpg로 교체) -->
+          <!-- 사례 02: 서울 송파구 -->
           <article class="compact-card" data-loc="seoul">
             <div class="compact-ba">
               <div class="c-img-box">
@@ -799,7 +672,7 @@
             </div>
           </article>
 
-          <!-- 사례 03: 경기 남양주시 (사진 업로드 후 src를 assets/namyangju_wabu_before.jpg / after.jpg로 교체) -->
+          <!-- 사례 03: 경기 남양주시 -->
           <article class="compact-card" data-loc="gyeonggi">
             <div class="compact-ba">
               <div class="c-img-box">
@@ -984,6 +857,55 @@
       </div>
     </section>
 
+    <!-- 3. 고객 상황별 빠른 자가진단 카드 -->
+    <section class="section" id="situations">
+      <div class="container panel">
+        <div class="center">
+          <p class="tag">내 현장은 어떤 상황인가요?</p>
+          <h2 class="h2">가장 많이 문의하시는 4가지 현장 고민</h2>
+          <p class="section-lead">해당하는 상황을 눌러보시면 실제 현장에서 어떻게 해결했는지 바로 확인하실 수 있습니다.</p>
+        </div>
+
+        <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); text-align:left; margin-top:22px;">
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <strong>상황 01 · 파손·이탈</strong>
+              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"차가 들이받아 볼라드·안전바 1개만 부러졌어요"</h3>
+              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">기존 파손 기둥과 박혀있는 앙카 볼트를 깔끔히 제거한 뒤, 주변 간격과 높이를 맞춰 1개만 부분 교체합니다.</p>
+            </div>
+            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">부분 교체 사례 보기 →</a>
+          </div>
+
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <strong>상황 02 · 흔들림·위치 수정</strong>
+              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"기둥은 멀쩡한데 바닥에서 흔들리거나 위치를 옮기고 싶어요"</h3>
+              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">아스콘·보도블록 등 약한 바닥에 박혀 헐거워진 앙카를 보강 재고정하거나 차량 동선에 맞춰 설치 위치를 수정합니다.</p>
+            </div>
+            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">재고정·수정 사례 보기 →</a>
+          </div>
+
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <strong>상황 03 · 출입 통제·이동식</strong>
+              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"평소엔 막아두고 필요할 때만 빼서 차를 대고 싶어요"</h3>
+              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">바닥 천공 후 매립관을 묻는 매립이동식 또는 자물쇠 잠금·체인 고리 용접 볼라드로 무단 주차를 완벽히 차단합니다.</p>
+            </div>
+            <a href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;" target="_blank">이동식·체인 시공 보기 →</a>
+          </div>
+
+          <div style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <strong>상황 04 · 야간·주말 작업</strong>
+              <h3 style="font-size:1.05rem; margin:6px 0; color:#111827;">"평일 낮엔 차가 계속 드나들어 작업할 시간이 없어요"</h3>
+              <p style="font-weight:400; font-size:0.9rem; color:#4b5563;">상가·빌라·물류센터 출입구 등 낮 시간 통제가 어려운 현장은 주말 및 야간 예약 출장으로 안전하게 시공합니다.</p>
+            </div>
+            <a href="tel:010-7724-5425" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:#1a73e8;">주말·야간 일정 문의 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 4. 고객 입장에서 보는 시공 방식 비교표 -->
     <section class="section" id="compare">
       <div class="container panel">
@@ -1029,29 +951,80 @@
       </div>
     </section>
 
-    <!-- 5. 간편 견적 상담 안내 (CTA) -->
-    <section class="section" id="contact">
+    <!-- 5. 견적 바로가기 (사례와 비교표로 신뢰 확보 후 바로 입력·문자 전송하는 핵심 전환 구역) -->
+    <section class="section" id="quick-quote">
       <div class="container panel center">
-        <p class="tag">30초 사진 견적 신청</p>
-        <h2 class="h2"><span class="dynamic-region-prefix"></span>현장 사진 2장만 보내주시면<br />출장비 포함 확정 견적을 바로 알려드립니다.</h2>
-        <div class="steps-grid">
-          <div>
-            <strong>01 · 전체 전경 사진 1장</strong>
-            <p>볼라드·주차 안전바 교체/설치할 위치와 주변 간격이 보이는 사진</p>
+        <p class="tag">견적 바로가기</p>
+        <h2 class="h2"><span class="dynamic-region-prefix"></span>볼라드 · 주차 안전바 견적 물어보기</h2>
+        <p class="section-lead">아래 4가지를 적거나 선택하시면 오른쪽(모바일은 아래)에서 <strong>견적 내용을 바로 확인하고 복사·문자 발송</strong>하실 수 있습니다.</p>
+
+        <div class="quote-grid">
+          <div class="quote-box">
+            <div class="quote-item">
+              <label class="quote-label" for="q1Input">1. 교체 vs 수리</label>
+              <span class="quote-help">신품 교체인지, 흔들림·위치 재고정 등 수리인지 선택하거나 적어주세요.</span>
+              <div class="quote-chips" data-qtarget="q1Input">
+                <button type="button" class="quote-chip-btn is-selected" data-qval="교체">교체</button>
+                <button type="button" class="quote-chip-btn" data-qval="수리">수리</button>
+                <button type="button" class="quote-chip-btn" data-qval="교체 및 수리 상담">교체·수리 상담</button>
+              </div>
+              <input id="q1Input" class="quote-input" type="text" value="교체" placeholder="예: 교체 / 수리 / 1개 부분 교체" />
+            </div>
+
+            <div class="quote-item">
+              <label class="quote-label" for="q2Input">2. 제품 실측 사이즈만 부탁드립니다.</label>
+              <span class="quote-help">높이, 지름(또는 가로·세로 폭), 베이스 크기 등 실측 치수를 적어주세요.</span>
+              <input id="q2Input" class="quote-input" type="text" placeholder="예: 높이 750mm, 지름 114mm (모르실 경우 '미확인')" />
+            </div>
+
+            <div class="quote-item">
+              <label class="quote-label" for="q3Input">3. 지역이 어디신가요</label>
+              <span class="quote-help">시/구/동 및 현장 위치(상가·아파트·주차장 등)를 적어주세요.</span>
+              <input id="q3Input" class="quote-input" type="text" placeholder="예: 구리시 수택동 / 광명시 하안동" />
+            </div>
+
+            <div class="quote-item">
+              <label class="quote-label" for="q4Input">4. 볼라드인가요, 기타 제품인가요(모르면 사진 첨부 부탁드립니다.)</label>
+              <span class="quote-help">볼라드·주차 안전바·기타 제품 여부를 고르거나 적어주세요. (모르면 사진 첨부)</span>
+              <div class="quote-chips" data-qtarget="q4Input">
+                <button type="button" class="quote-chip-btn is-selected" data-qval="볼라드">볼라드</button>
+                <button type="button" class="quote-chip-btn" data-qval="주차 안전바">주차 안전바</button>
+                <button type="button" class="quote-chip-btn" data-qval="기타 제품(모름·사진 첨부 부탁드립니다.)">기타 제품 / 모름(사진 첨부)</button>
+              </div>
+              <input id="q4Input" class="quote-input" type="text" value="볼라드" placeholder="예: 볼라드 / 주차 안전바 / 기타 제품(모름·사진 첨부)" />
+            </div>
           </div>
-          <div>
-            <strong>02 · 바닥 근접 사진 1장</strong>
-            <p>바닥 재질(아스콘·콘크리트·블록)과 파손·앙카 부위가 보이는 사진</p>
+
+          <div class="quote-box">
+            <strong style="display:block; font-size:0.98rem; color:#0f172a; margin-bottom:10px;">✔ 바로 확인하는 견적 요약</strong>
+
+            <div class="quote-preview-card">
+              <div class="quote-preview-line">
+                <span class="quote-preview-k">1. 교체 vs 수리</span>
+                <span class="quote-preview-v" id="prevQ1">교체</span>
+              </div>
+              <div class="quote-preview-line">
+                <span class="quote-preview-k">2. 제품 실측 사이즈</span>
+                <span class="quote-preview-v" id="prevQ2">미입력</span>
+              </div>
+              <div class="quote-preview-line">
+                <span class="quote-preview-k">3. 지역</span>
+                <span class="quote-preview-v" id="prevQ3">미입력</span>
+              </div>
+              <div class="quote-preview-line">
+                <span class="quote-preview-k">4. 볼라드 / 기타 제품</span>
+                <span class="quote-preview-v" id="prevQ4">볼라드</span>
+              </div>
+            </div>
+
+            <textarea id="quoteSummaryText" class="quote-textarea" readonly></textarea>
+
+            <div class="quote-actions">
+              <button type="button" class="button" id="copyQuoteSummaryBtn">📋 견적 내용 복사하기</button>
+              <a class="button cta-main-btn" id="smsQuoteSummaryBtn" href="sms:010-7724-5425">📩 문자로 견적 보내기 (010-7724-5425)</a>
+            </div>
+            <div class="quote-copy-status" id="quoteCopyStatus"></div>
           </div>
-          <div>
-            <strong>03 · 지역·수량·희망일</strong>
-            <p>예) "구리 수택동, 우레탄 볼라드 2개 교체, 토요일 오전 희망"</p>
-          </div>
-        </div>
-        <div class="buttons" style="margin-top:20px;">
-          <a class="button cta-main-btn" href="#quick-quote">📋 <span class="dynamic-region-prefix"></span>견적 바로가기</a>
-          <a class="button" href="tel:010-7724-5425">📞 바로 전화 상담 (010-7724-5425)</a>
-          <a class="button alt" href="https://blog.naver.com/realcharming-" rel="noopener noreferrer" target="_blank">전체 시공 사례 블로그 구경하기</a>
         </div>
       </div>
     </section>
@@ -1081,7 +1054,7 @@
             <p>네, 상가 주차장, 물류센터, 아파트 출입구 등 평일 주간 통제가 어려운 현장을 위해 주말 및 야간 예약 출장 시공을 지원합니다.</p>
           </details>
           <details class="faq">
-            <summary>출장 가능한 지역은 어디까지인가요?</summary>
+            <summary>출장 가능한 지역 범위는 어디까지인가요?</summary>
             <p>구리시·광명시를 포함한 경기도 31개 시·군 전지역과 서울특별시 전 구, 인천광역시 전지역, 그리고 충청북도 충주시 전지역까지 일정을 조율하여 직접 방문 시공합니다.</p>
           </details>
         </div>

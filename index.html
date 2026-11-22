@@ -32,7 +32,7 @@
 
   <link href="styles.css" rel="stylesheet" />
 
-  <!-- 지역명(CTA 포인트) 강조 + 후킹 배지 + 최상단 미니 GIF 전·후 자동 비교 + 견적 바로가기 + 컴팩트 10선 스타일 -->
+  <!-- 지역명(CTA 포인트) 강조 + 후킹 배지 + 최상단 미니 GIF 전·후 자동 비교 + 견적 바로가기 + 모바일 최적화 컴팩트 10선 스타일 -->
   <style>
     /* 최상단 신뢰 & 후킹 배지 */
     .trust-hook-bar {
@@ -109,14 +109,14 @@
       box-shadow: 0 8px 22px rgba(225, 29, 72, 0.38);
     }
 
-    /* 최상단 아담한 미니 GIF형 Before/After 자동 비교 박스 (후킹 테두리 강화) */
+    /* 최상단 아담한 미니 GIF형 Before/After 자동 비교 박스 */
     .mini-gif-wrap {
-      max-width: 360px;
-      margin: 18px auto 22px;
+      max-width: 340px;
+      margin: 16px auto 20px;
       background: #ffffff;
       border: 2.5px solid #1d4ed8;
       border-radius: 16px;
-      padding: 12px;
+      padding: 10px;
       box-shadow: 0 10px 25px rgba(29, 78, 216, 0.14);
       transition: transform 0.2s ease;
     }
@@ -124,7 +124,7 @@
       transform: translateY(-2px);
     }
     .mini-gif-title {
-      font-size: 0.94rem;
+      font-size: 0.9rem;
       font-weight: 900;
       color: #0f172a;
       margin-bottom: 8px;
@@ -136,7 +136,7 @@
     .mini-gif-stage {
       position: relative;
       width: 100%;
-      height: 220px;
+      height: 185px;
       border-radius: 10px;
       overflow: hidden;
       background: #0f172a;
@@ -147,26 +147,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      display: block !important;
     }
     .mini-gif-badge {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 5px 12px;
+      top: 8px;
+      left: 8px;
+      padding: 4px 10px;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 900;
       color: #ffffff;
       letter-spacing: -0.01em;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
     }
-    .badge-before {
-      background: #dc2626;
-    }
-    .badge-after {
-      background: #1d4ed8;
-    }
+    .badge-before { background: #dc2626; }
+    .badge-after { background: #1d4ed8; }
 
     /* 3.6초 주기로 시공 전 -> 시공 후 자동 교차 */
     .gif-layer-after {
@@ -179,7 +175,7 @@
     }
     .mini-gif-caption {
       margin-top: 8px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #1d4ed8;
       font-weight: 800;
     }
@@ -188,8 +184,8 @@
     .quote-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
-      margin-top: 22px;
+      gap: 18px;
+      margin-top: 20px;
       text-align: left;
       align-items: start;
     }
@@ -200,40 +196,40 @@
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
     }
     .quote-item {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .quote-item:last-child {
       margin-bottom: 0;
     }
     .quote-label {
       display: block;
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 4px;
     }
     .quote-help {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #64748b;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
     .quote-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 8px;
     }
     .quote-chip-btn {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       color: #334155;
-      padding: 7px 12px;
+      padding: 6px 11px;
       border-radius: 8px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
     }
@@ -247,7 +243,7 @@
       padding: 10px 12px;
       border: 1px solid #cbd5e1;
       border-radius: 9px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #0f172a;
       background: #ffffff;
     }
@@ -259,16 +255,16 @@
       background: #f8fafc;
       border: 1.5px solid #93c5fd;
       border-radius: 12px;
-      padding: 16px;
+      padding: 14px;
       margin-bottom: 12px;
     }
     .quote-preview-line {
       display: flex;
       justify-content: space-between;
       gap: 10px;
-      padding: 7px 0;
+      padding: 6px 0;
       border-bottom: 1px dashed #cbd5e1;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
     }
     .quote-preview-line:last-child {
       border-bottom: none;
@@ -285,15 +281,15 @@
     }
     .quote-textarea {
       width: 100%;
-      min-height: 132px;
-      padding: 11px 12px;
+      min-height: 126px;
+      padding: 10px 12px;
       border: 1px solid #cbd5e1;
       border-radius: 10px;
       background: #ffffff;
-      font-size: 0.85rem;
-      line-height: 1.55;
+      font-size: 0.84rem;
+      line-height: 1.5;
       color: #0f172a;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       resize: vertical;
     }
     .quote-actions {
@@ -302,29 +298,34 @@
       gap: 8px;
     }
     .quote-copy-status {
-      margin-top: 8px;
-      font-size: 0.82rem;
+      margin-top: 6px;
+      font-size: 0.8rem;
       font-weight: 800;
       color: #0d9488;
-      min-height: 20px;
+      min-height: 18px;
       text-align: center;
     }
 
-    /* 컴팩트 10개 사례 그리드 (기존 대비 약 25% 아담한 사이즈) */
+    /* 컴팩트 10개 사례 그리드: 모바일에서도 작고 선명하게 보이도록 고정 */
+    #photos.service-before-after {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
     .mini-filter-bar {
-      display: flex;
+      display: flex !important;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 7px;
-      margin: 16px 0 20px;
+      gap: 6px;
+      margin: 14px 0 16px;
     }
     .mini-filter-btn {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       color: #334155;
-      padding: 6px 13px;
+      padding: 6px 11px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 800;
       cursor: pointer;
     }
@@ -335,94 +336,115 @@
       border-color: #0f172a;
     }
     .compact-case-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 10px !important;
+      width: 100%;
     }
     @media (max-width: 960px) {
-      .compact-case-grid { grid-template-columns: repeat(3, 1fr); }
+      .compact-case-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
     }
     @media (max-width: 640px) {
-      .compact-case-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+      .compact-case-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+      }
     }
     .compact-card {
+      display: flex !important;
+      flex-direction: column !important;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+      min-width: 0;
+    }
+    .compact-card.is-hidden {
+      display: none !important;
     }
     .compact-ba {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
       gap: 2px;
-      background: #0f172a;
+      background: #1e293b;
+      width: 100%;
     }
     .c-img-box {
       position: relative;
-      height: 92px;
+      width: 100%;
+      height: 76px !important;
       overflow: hidden;
+      background: #334155;
+    }
+    @media (max-width: 640px) {
+      .c-img-box {
+        height: 62px !important;
+      }
     }
     .c-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
     }
     .c-tag {
       position: absolute;
-      top: 5px;
-      left: 5px;
-      padding: 2px 6px;
+      top: 4px;
+      left: 4px;
+      padding: 1px 5px;
       border-radius: 4px;
-      font-size: 0.68rem;
+      font-size: 0.64rem;
       font-weight: 900;
       color: #ffffff;
+      line-height: 1.3;
     }
     .c-tag.before { background: rgba(220, 38, 38, 0.92); }
     .c-tag.after { background: rgba(29, 78, 216, 0.92); }
     .compact-body {
-      padding: 10px 11px 12px;
+      padding: 8px 9px 10px;
       text-align: left;
       flex: 1;
     }
     .compact-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 6px;
+      gap: 3px;
+      margin-bottom: 5px;
     }
     .b-city {
       background: #fff1f2;
       color: #e11d48;
       border: 1px solid #fecdd3;
-      font-size: 0.7rem;
+      font-size: 0.66rem;
       font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 5px;
+      padding: 1px 5px;
+      border-radius: 4px;
     }
     .b-type {
       background: #eff6ff;
       color: #1d4ed8;
-      font-size: 0.7rem;
+      font-size: 0.66rem;
       font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 5px;
+      padding: 1px 5px;
+      border-radius: 4px;
     }
     .compact-body h3 {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 800;
       color: #0f172a;
-      margin: 0 0 4px;
-      line-height: 1.35;
+      margin: 0 0 3px;
+      line-height: 1.3;
     }
     .compact-body p {
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       color: #64748b;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.35;
     }
   </style>
 
@@ -553,7 +575,7 @@
         <h1 class="h1"><span class="dynamic-region-prefix"></span>부러지고 흔들리는 볼라드·주차 안전바,<br />1개만 교체·수정해도 새것처럼 튼튼해집니다.</h1>
         <p class="lead">멀쩡한 시설물까지 통째로 갈아엎지 않습니다. 파손된 자리만 정밀 철거 후 바닥 재질에 맞춰 단단하게 재고정합니다.</p>
 
-        <!-- 최상단 후킹 미니 GIF형 전·후 자동 비교 위젯 (네이버 대표 썸네일 연동) -->
+        <!-- 최상단 후킹 미니 GIF형 전·후 자동 비교 위젯 -->
         <a aria-label="실제 볼라드 교체 전후 사례 블로그 보기" class="mini-gif-wrap" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" style="display:block; text-decoration:none;" target="_blank">
           <div class="mini-gif-title">
             <span>⚡</span>
@@ -715,7 +737,7 @@
       </div>
     </section>
 
-    <!-- 3. 실제 작업 전·후 컴팩트 10개 쇼케이스 (사이즈 25% 축소 · 볼라드 종류 + 도/시 표시) -->
+    <!-- 3. 실제 작업 전·후 컴팩트 10개 쇼케이스 (모바일 2열 작게 표시 · 볼라드 종류 + 도/시 표시) -->
     <section class="section service-before-after" id="photos">
       <div class="container">
         <div class="section-head center">
@@ -755,15 +777,15 @@
             </div>
           </article>
 
-          <!-- 사례 02: 서울 송파구 -->
+          <!-- 사례 02: 서울 송파구 (사진 업로드 후 src를 assets/songpa_munjeong_before.jpg / after.jpg로 교체) -->
           <article class="compact-card" data-loc="seoul">
             <div class="compact-ba">
               <div class="c-img-box">
-                <img src="assets/songpa_munjeong_before.jpg" alt="서울 송파구 문정동 주차금지봉 볼라드 교체 전" loading="lazy" />
+                <img src="assets/bollard_before.jpg" alt="서울 송파구 문정동 주차금지봉 볼라드 교체 전" loading="lazy" />
                 <span class="c-tag before">전</span>
               </div>
               <div class="c-img-box">
-                <img src="assets/songpa_munjeong_after.jpg" alt="서울 송파구 문정동 주차금지봉 볼라드 교체 후" loading="lazy" />
+                <img src="assets/bollard_after.jpg" alt="서울 송파구 문정동 주차금지봉 볼라드 교체 후" loading="lazy" />
                 <span class="c-tag after">후</span>
               </div>
             </div>
@@ -777,15 +799,15 @@
             </div>
           </article>
 
-          <!-- 사례 03: 경기 남양주시 -->
+          <!-- 사례 03: 경기 남양주시 (사진 업로드 후 src를 assets/namyangju_wabu_before.jpg / after.jpg로 교체) -->
           <article class="compact-card" data-loc="gyeonggi">
             <div class="compact-ba">
               <div class="c-img-box">
-                <img src="assets/namyangju_wabu_before.jpg" alt="경기 남양주시 와부읍 주차 안전바 볼라드 교체 전" loading="lazy" />
+                <img src="assets/bollard_before.jpg" alt="경기 남양주시 와부읍 주차 안전바 볼라드 교체 전" loading="lazy" />
                 <span class="c-tag before">전</span>
               </div>
               <div class="c-img-box">
-                <img src="assets/namyangju_wabu_after.jpg" alt="경기 남양주시 와부읍 주차 안전바 볼라드 교체 후" loading="lazy" />
+                <img src="assets/bollard_after.jpg" alt="경기 남양주시 와부읍 주차 안전바 볼라드 교체 후" loading="lazy" />
                 <span class="c-tag after">후</span>
               </div>
             </div>
@@ -955,7 +977,7 @@
 
         </div>
 
-        <div style="margin-top:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <div style="margin-top:18px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
           <a class="button cta-main-btn" href="bollard-archive.html">📂 지역별 전체 시공 사례 아카이브 더보기 (남양주 와부읍 · 송파구 문정동 등) →</a>
           <a class="button alt" href="https://blog.naver.com/realcharming-/224472129618" rel="noopener noreferrer" target="_blank">이 현장 블로그 후기 읽기 →</a>
         </div>
@@ -1278,9 +1300,9 @@
           const targetLoc = this.getAttribute('data-loc');
           document.querySelectorAll('.compact-card').forEach(function(card) {
             if (targetLoc === 'all' || card.getAttribute('data-loc') === targetLoc) {
-              card.style.display = 'flex';
+              card.classList.remove('is-hidden');
             } else {
-              card.style.display = 'none';
+              card.classList.add('is-hidden');
             }
           });
         });

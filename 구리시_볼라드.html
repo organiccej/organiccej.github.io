@@ -71,9 +71,9 @@
     .container { max-width:1040px; margin:0 auto; padding:0 16px; }
     .header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
     .header-inner { display:flex; align-items:center; justify-content:space-between; padding:11px 16px; gap:8px; flex-wrap:wrap; }
-    .logo { font-size:1.06rem; font-weight:900; color:var(--navy); }
+    .logo { font-size:1.05rem; font-weight:900; color:var(--navy); }
     .logo span { color:var(--red); }
-    .nav-btns { display:flex; gap:6px; align-items:center; }
+    .nav-btns { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
     .pill-btn { background:#f1f5f9; border:1px solid #cbd5e1; padding:6px 11px; border-radius:999px; font-size:0.78rem; font-weight:800; white-space:nowrap; }
     .call-btn { background:var(--navy); color:#fff; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:800; white-space:nowrap; }
 
@@ -81,7 +81,6 @@
     .breadcrumb-list { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:0; padding:0; list-style:none; }
     .breadcrumb-list a { color:var(--primary); font-weight:700; }
 
-    /* 히어로: 왼쪽 핵심 SEO 제목 + 오른쪽 대표 이미지 GIF 모션 후킹 */
     .hero { background:var(--white); border-bottom:1px solid var(--border); padding:26px 0; }
     .hero-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:20px; align-items:center; }
     @media (max-width:780px) { .hero-grid { grid-template-columns:1fr; } }
@@ -127,16 +126,25 @@
     .ba-tag.after { background:var(--primary); }
     .ba-fig figcaption { background:#f8fafc; padding:8px 10px; font-size:0.8rem; font-weight:700; color:#334155; text-align:center; }
 
-    /* 비용·단가 기준표 */
     .price-table { width:100%; border-collapse:collapse; margin-top:10px; font-size:0.86rem; }
     .price-table th, .price-table td { border:1px solid var(--border); padding:10px 12px; text-align:left; }
     .price-table th { background:#f1f5f9; color:var(--navy); font-weight:800; }
 
-    /* 구리시 및 5~10km 반경 인접 동네 링크 그리드 */
     .dong-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px; margin-top:12px; }
-    .dong-card { display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:12px; }
+    .dong-card { display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:12px; cursor:pointer; }
     .dong-card strong { display:block; font-size:0.9rem; font-weight:900; color:var(--navy); margin-bottom:2px; }
     .dong-card span { font-size:0.77rem; color:var(--primary); font-weight:700; }
+
+    /* 구리시 페이지 내 바로 견적 폼 */
+    .quote-box { background:#ffffff; border:2px solid #1d4ed8; border-radius:16px; padding:22px 18px; margin-top:22px; box-shadow:0 8px 24px rgba(29,78,216,0.08); }
+    .quote-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    @media (max-width:640px) { .quote-grid { grid-template-columns:1fr; } }
+    .q-input, .q-select, .q-textarea { width:100%; padding:11px 12px; border:1px solid #cbd5e1; border-radius:10px; font-size:0.9rem; font-family:inherit; background:#f8fafc; }
+    .q-textarea { grid-column:1 / -1; min-height:76px; resize:vertical; }
+    .q-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; }
+    @media (max-width:640px) { .q-btn-row { grid-template-columns:1fr; } }
+    .btn-sms { background:#e11d48; color:#fff; border:none; padding:13px; border-radius:10px; font-size:0.94rem; font-weight:900; cursor:pointer; text-align:center; }
+    .btn-call-lg { background:#0f172a; color:#fff; padding:13px; border-radius:10px; font-size:0.94rem; font-weight:900; text-align:center; display:block; }
 
     .seo-summary-box { background:#0b1324; color:#e2e8f0; border-radius:16px; padding:22px 18px; margin-top:24px; font-size:0.83rem; line-height:1.75; }
     .seo-summary-box h2 { color:#38bdf8; font-size:1.05rem; margin:0 0 8px; }
@@ -146,10 +154,11 @@
 
   <header class="header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">마이홈리페어랩 <span>· 구리시 볼라드·카스토퍼</span></a>
+      <a class="logo" href="index.html">← 마이홈리페어랩 <span>메인</span></a>
       <div class="nav-btns">
-        <a class="pill-btn" href="index.html">메인</a>
-        <a class="pill-btn" href="bollard-archive.html">견적·사례 비교</a>
+        <a class="pill-btn" href="index.html">🏠 기본 메인으로</a>
+        <a class="pill-btn" href="#guri-quote">📋 구리시 바로견적</a>
+        <a class="pill-btn" href="bollard-archive.html">사례 비교</a>
         <a class="call-btn" href="tel:010-7724-5425">📞 010-7724-5425</a>
       </div>
     </div>
@@ -172,21 +181,20 @@
       <div>
         <span class="hero-tag">GURI BOLLARD &amp; CAR STOPPER</span>
         <h1>구리시 볼라드 교체 · 수택·교문·인창·다산 카스토퍼·주차 안전바 설치 업체 비용 단가</h1>
-        <p>구리시 전지역 및 반경 5~10km 이내 인접 동네에서 파손된 볼라드, 주차 안전바, 카스토퍼(주차 스토퍼), 주차금지봉 1개만 정밀 부분 교체·설치합니다. 현장 사진 2장으로 출장비 포함 확정 비용·단가를 바로 안내해 드립니다.</p>
+        <p>구리시 전지역 및 반경 5~10km 이내 인접 동네에서 파손된 볼라드, 주차 안전바, 카스토퍼(주차 스토퍼), 주차금지봉 1개만 정밀 부분 교체·설치합니다. 아래에서 바로 견적을 남기거나 기본 메인 페이지로 이동하실 수 있습니다.</p>
         <div class="hero-cta-row">
-          <a class="btn-red" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%88%98%ED%83%9D%EB%8F%99#quick-quote">📋 구리시 비용·단가 바로 문의</a>
-          <a class="btn-outline" href="bollard-archive.html">시공 업체 견적 비교 보기 →</a>
+          <a class="btn-red" href="#guri-quote">📋 구리시 견적 바로 신청</a>
+          <a class="btn-outline" href="index.html">← 기본 메인 페이지 돌아가기</a>
         </div>
       </div>
 
-      <!-- 대표 이미지 GIF 모션 후킹 (assets/guri_bollard_before.jpg · assets/guri_bollard_after.jpg) -->
-      <a href="bollard-archive.html" class="gif-hook-box" aria-label="구리시 볼라드 교체 전후 대표 모션 보기">
+      <a href="#guri-quote" class="gif-hook-box" aria-label="구리시 볼라드 교체 전후 대표 모션 보기">
         <span class="gif-badge">LIVE 전·후 모션</span>
         <img class="gif-slide-img img-before" src="assets/guri_bollard_before.jpg" alt="구리시 볼라드 교체 업체 수택동 카스토퍼 시공 전 대표 사진" />
         <img class="gif-slide-img img-after" src="assets/guri_bollard_after.jpg" alt="구리시 볼라드 설치 업체 교문동 인창동 주차 안전바 시공 후 대표 사진" />
         <div class="gif-caption">
           <span>구리시 볼라드·카스토퍼 교체 전후</span>
-          <span>견적 비교 →</span>
+          <span>견적 문의 →</span>
         </div>
       </a>
     </div>
@@ -195,7 +203,6 @@
   <main class="sec">
     <div class="container">
 
-      <!-- 1. 구리시 볼라드·주차 안전바 시공 전후 -->
       <article class="card-box">
         <h2>구리시 볼라드 교체 업체 · 주차 안전바 1개 부분보수 전후</h2>
         <p>
@@ -215,7 +222,6 @@
         </div>
       </article>
 
-      <!-- 2. 구리·다산 카스토퍼(주차 스토퍼) 시공 전후 -->
       <article class="card-box">
         <h2>구리·다산 카스토퍼 교체 · 주차 스토퍼·차량 방지턱 설치 업체</h2>
         <p>
@@ -235,7 +241,6 @@
         </div>
       </article>
 
-      <!-- 3. 구리시 볼라드·카스토퍼 교체 설치 비용 단가 기준표 -->
       <section class="card-box" aria-label="구리시 볼라드 및 카스토퍼 교체 설치 비용 단가 안내">
         <h2>구리시 볼라드 · 카스토퍼 교체 설치 비용 단가 산정 기준</h2>
         <p>불필요한 전체 교체 없이 파손된 수량만큼만 산정하여 거품 없는 시공 단가로 안내해 드립니다.</p>
@@ -272,43 +277,71 @@
         </table>
       </section>
 
-      <!-- 4. 구리시 및 반경 5~10km 이내 인접 동네 출장 리스트 -->
-      <section class="card-box" aria-label="구리시 및 5~10km 반경 인접 동네 볼라드 카스토퍼 출장 안내">
-        <h2>구리시 및 반경 5~10km 이내 인접 동네 볼라드 · 카스토퍼 교체 설치</h2>
-        <p>구리시 전 동(洞)과 5~10km 생활권인 남양주 다산·퇴계원, 서울 중랑·광진·강동, 하남 미사까지 당일·예약 출장이 가능합니다.</p>
+      <section class="card-box" aria-label="구리시 및 5~10km 반경 인접 동네 출장 안내">
+        <h2>구리시 및 반경 5~10km 이내 인접 동네 선택 (클릭 시 아래 견적창 자동 입력)</h2>
+        <p>원하시는 동네를 누르시면 아래 견적 입력칸에 지역명이 자동으로 들어갑니다.</p>
         <div class="dong-links">
-          <a class="dong-card" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%88%98%ED%83%9D%EB%8F%99#quick-quote">
+          <div class="dong-card" onclick="setGuriRegion('구리시 수택동')">
             <strong>수택동 볼라드 교체</strong>
             <span>수택동 카스토퍼·주차 안전바 설치 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B5%90%EB%AC%B8%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('구리시 교문동')">
             <strong>교문동 볼라드 설치 업체</strong>
             <span>교문동 볼라드 교체·주차금지봉 수리 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%9D%B8%EC%B0%BD%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('구리시 인창동')">
             <strong>인창동 주차 안전바 교체</strong>
             <span>인창동 볼라드·카스토퍼 설치 단가 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%ED%86%A0%ED%8F%89%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('구리시 토평동·아천동')">
             <strong>토평동·아천동 볼라드 교체</strong>
             <span>토평동 주차 스토퍼·차선규제봉 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B0%88%EB%A7%A4%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('구리시 갈매동·사노동')">
             <strong>갈매동·사노동 볼라드 업체</strong>
             <span>갈매동 카스토퍼·안전바 교체 비용 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EB%82%A8%EC%96%91%EC%A3%BC%EC%8B%9C%20%EB%8B%A4%EC%82%B0%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('남양주시 다산동·지금동·도농동')">
             <strong>다산동·지금동·도농동·가운동</strong>
             <span>다산 볼라드·카스토퍼 교체 설치 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%EC%84%9C%EC%9A%B8%20%EC%A4%91%EB%9E%91%EA%B5%AC%20%EB%A7%9D%EC%9A%B0%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('서울 중랑구 망우동·상봉동·면목동')">
             <strong>망우동·상봉동·면목동·신내동</strong>
             <span>구리 인접 서울 동북권 볼라드 교체 →</span>
-          </a>
-          <a class="dong-card" href="index.html?region=%ED%95%98%EB%82%A8%EC%8B%9C%20%EB%AF%B8%EC%82%AC%EB%8F%99#quick-quote">
+          </div>
+          <div class="dong-card" onclick="setGuriRegion('하남시 미사동·덕풍동')">
             <strong>하남 미사동·덕풍동·퇴계원읍</strong>
             <span>구리 10km 이내 카스토퍼·안전바 →</span>
-          </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 구리시 페이지 내 바로 견적 신청 박스 -->
+      <section class="quote-box" id="guri-quote" aria-label="구리시 볼라드 카스토퍼 바로 견적 문의">
+        <span style="display:inline-block; font-size:0.75rem; font-weight:800; color:#1d4ed8; background:#eff6ff; padding:3px 10px; border-radius:999px; margin-bottom:6px;">구리시·다산·인접지역 직통 견적</span>
+        <h2 style="font-size:1.22rem; font-weight:900; color:#0f172a; margin:0 0 6px;">구리시 볼라드 · 카스토퍼 교체 설치 바로 견적 요청</h2>
+        <p style="font-size:0.86rem; color:#475569; margin:0;">지역·품목·수량을 선택하고 문자 보내기를 누르시면 휴대폰 문자 앱으로 바로 연결됩니다. 현장 사진 2장을 함께 첨부해 주시면 확정 단가를 바로 회신드립니다.</p>
+
+        <div class="quote-grid">
+          <input type="text" id="q-region" class="q-input" value="구리시 수택동" placeholder="지역 (예: 구리시 수택동, 다산동)" />
+          <select id="q-item" class="q-select">
+            <option value="볼라드 1개 부분 교체">볼라드 1개 부분 교체</option>
+            <option value="볼라드 신규 설치">볼라드 신규 설치</option>
+            <option value="볼라드 앙카 빠짐 재고정">볼라드 앙카 빠짐 재고정</option>
+            <option value="주차 안전바·주차금지봉 교체">주차 안전바·주차금지봉 교체</option>
+            <option value="카스토퍼·주차 스토퍼 교체 설치">카스토퍼·주차 스토퍼 교체 설치</option>
+          </select>
+          <textarea id="q-memo" class="q-textarea" placeholder="수량, 바닥 재질(아스콘/콘크리트), 희망 일정을 간단히 적어주세요."></textarea>
+        </div>
+
+        <div class="q-btn-row">
+          <button type="button" class="btn-sms" onclick="sendGuriSms()">💬 작성 내용으로 문자 견적 보내기</button>
+          <a class="btn-call-lg" href="tel:010-7724-5425">📞 전화 바로 상담 (010-7724-5425)</a>
+        </div>
+
+        <div style="margin-top:14px; padding-top:12px; border-top:1px dashed #cbd5e1; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; font-size:0.83rem; font-weight:800;">
+          <a href="index.html" style="color:#0f172a;">← 기본 메인 페이지(index.html)로 돌아가기</a>
+          <a href="bollard-archive.html" style="color:#1d4ed8;">전체 시공 사례 아카이브 보기 →</a>
         </div>
       </section>
 
@@ -321,9 +354,27 @@
   </main>
 
   <footer style="background:#fff; border-top:1px solid var(--border); padding:22px 16px; text-align:center; font-size:0.85rem; color:var(--muted);">
-    <p style="margin:0 0 4px;"><strong>마이홈리페어랩</strong> | 상담 전화: <a href="tel:010-7724-5425" style="color:var(--primary); font-weight:800;">010-7724-5425</a></p>
-    <p style="margin:0;">구리시 수택동 · 교문동 · 인창동 · 토평동 · 갈매동 · 다산동 볼라드·카스토퍼·주차 안전바 교체 설치 전문</p>
+    <p style="margin:0 0 6px;"><strong>마이홈리페어랩</strong> | 상담 전화: <a href="tel:010-7724-5425" style="color:var(--primary); font-weight:800;">010-7724-5425</a></p>
+    <p style="margin:0 0 8px;">구리시 수택동 · 교문동 · 인창동 · 토평동 · 갈매동 · 다산동 볼라드·카스토퍼·주차 안전바 교체 설치 전문</p>
+    <p style="margin:0;"><a href="index.html" style="color:#0f172a; font-weight:800; text-decoration:underline;">기본 메인 페이지로 돌아가기</a></p>
   </footer>
+
+  <script>
+    function setGuriRegion(regionName) {
+      const input = document.getElementById('q-region');
+      const box = document.getElementById('guri-quote');
+      if (input) input.value = regionName;
+      if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function sendGuriSms() {
+      const region = document.getElementById('q-region').value.trim() || '구리시';
+      const item = document.getElementById('q-item').value;
+      const memo = document.getElementById('q-memo').value.trim();
+      const body = `[마이홈리페어랩 견적문의]\n지역: ${region}\n품목: ${item}\n내용: ${memo || '현장 사진 첨부 예정'}`;
+      window.location.href = `sms:010-7724-5425?body=${encodeURIComponent(body)}`;
+    }
+  </script>
 
 </body>
 </html>
